@@ -6,7 +6,7 @@ const fs = require('fs');
 var fetchBucketData = () => {
   return new Promise((resolve,reject) => {
       try{
-        fs.readFile('./Data/bucket.json',function(err,data){
+        fs.readFile('./datas/bucket.json',function(err,data){
           if(err){
             reject('ERROR');
           }
