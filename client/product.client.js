@@ -12,7 +12,6 @@ exports.fetchProductData = () => {
           reject('ERROR');
         }
         else {
-          //onsole.log("---------------------\n\n", JSON.parse(data));
           resolve(JSON.parse(data));
         }
       });

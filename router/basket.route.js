@@ -6,6 +6,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(controller.pickBucket);
+  .get(controller.pickBucket)
+  .post(controller.fillBucket);
 
   module.exports = router;

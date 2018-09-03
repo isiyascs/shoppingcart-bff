@@ -20,4 +20,20 @@ var fetchBucketData = () => {
   });
 }
 
-module.exports = fetchBucketData;
+var addToBucket = (data) => {
+  return new Promise((resolve,reject)=>{
+    fs.writeFile('./datas/bucket.json',JSON.stringify(data),function(err){
+      if(err) {
+        reject(err);
+      }
+      else {
+        resolve("SUCCESSFULLY UPDATED");
+      }
+    });
+  });
+}
+
+module.exports = {
+  fetchBucketData,
+  addToBucket
+}

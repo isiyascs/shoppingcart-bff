@@ -1,8 +1,23 @@
-[
-  {"productId":1 ,"productName":"Samsung"},
-  {"productId":2 ,"productName":"Sony"},
-  {"productId":3 ,"productName":"Lg"},
-  {"productId":4 ,"productName":"Apple"},
-  {"productId":5 ,"productName":"Lenovo"},
-  {"productId":6 ,"productName":"Oneplus"}
-]
+[{
+  "id": 1,
+  "productName": "lenovo",
+  "prize": "1000",
+  "image": "jpenddreth0@census.gov"
+
+}, {
+  "id": 2,
+  "productName": "nokia",
+  "prize": "67878",
+  "image": "jpenddreth0@census.gov"
+
+}, {
+  "id": 3,
+  "productName": "samsung",
+  "prize": "6767",
+  "image": "jpenddreth0@census.gov"
+}, {
+  "id": 4,
+  "productName": "oppo",
+  "prize": "7878",
+  "image": "jpenddreth0@census.gov"
+}]
