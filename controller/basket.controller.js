@@ -14,7 +14,6 @@ module.exports = {
   },
 
   fillBucket: (req, res, next) => {
-    console.log("************/////////////////***************");
     try{
       const { id, productName, prize, image } = req.body;
       var singleProduct = {
