@@ -22,12 +22,9 @@ module.exports = {
         "prize":prize,
         "image":image
       };
-      client.fetchBucketData().then((data) => {
-        data.push(singleProduct);
-        client.addToBucket(data).then((message)=>{
+        client.addToBucket(singleProduct).then((message)=>{
           res.send(message);
           next();
-        });
       });
     } catch (err) {
       res.send(err);
