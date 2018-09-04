@@ -9,6 +9,7 @@ const router = express.Router();
 router
   .route('/')
   .get(controller.pickBucket)
-  .post(validation.validatePostBasketBody,controller.fillBucket);
+  .post(validation.validatePostBasketBody,controller.fillBucket)
+  .delete(controller.deleteFromBucket);
 
   module.exports = router;

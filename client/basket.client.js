@@ -6,7 +6,7 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/mydb";
 
 /*
-* Function that read bucket,json file and return a promise
+* Function that read bucket collection and return a promise
 */
 var fetchBucketData = () => {
   return new Promise((resolve,reject) => {
@@ -26,6 +26,9 @@ var fetchBucketData = () => {
   });
 }
 
+/*
+* Function that write to bucket collection and return a promise
+*/
 var addToBucket = (data) => {
   return new Promise((resolve,reject)=>{
     MongoClient.connect(url, function(err, db) {
@@ -43,7 +46,27 @@ var addToBucket = (data) => {
   });
 };
 
+/*
+* Function that delete a data from bucket collection and return a promise
+*/
+var deleteData = (pId) => {
+  return new Promise((resolve,reject)=>{
+    MongoClient.connect(url,function(err,db) {
+      if(err) throw err;
+      var dbo = db.db("mydb");
+      console.log("pId",pId);
+      var myquery = {id:pId};
+      dbo.collection("bucket").deleteMany(myquery, function(err, obj) {
+        if (err) throw err;
+        resolve("DELETED ITEM");
+        db.close();
+      });
+    });
+  });
+}
+
 module.exports = {
   fetchBucketData,
-  addToBucket
+  addToBucket,
+  deleteData
 }

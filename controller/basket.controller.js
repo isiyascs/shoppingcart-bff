@@ -29,5 +29,17 @@ module.exports = {
     } catch (err) {
       res.send(err);
     }
+  },
+
+  deleteFromBucket: (req, res, next) => {
+    try{
+      const id = req.body.id;
+      client.deleteData(id).then((message)=>{
+        res.send(message);
+        next();
+      });
+    }catch(e) {
+      res.send(e);
+    }
   }
 };
